@@ -13,28 +13,51 @@
     background-color: var(--secondary-bg-color);
 }
 // .contacts-container {
-//     width: 100%;
-//     display: block;
-//     // margin-top: -84px;
+//   // margin-top: -84px;
 //   }
 
 .location-list {
-  display: flex;
-  // flex-wrap: wrap;
-  margin: -15px;
-  padding: 0;
-  width: 100%;
+  @include adaptive-before-tablet {
+     padding: 30px;
+  }
+
+  @include adaptive-for-tablet {
+    display: flex;
+    padding: 0;
+    margin: -10px;
+  }
+
+  @include adaptive-for-desktop {
+    margin: -15px;
+  }
 }
 
 .location-list-item {
-  flex-basis: calc((100% - 60px) / 3);
-  margin: 15px;
-    padding: 43px 20px;
-    text-align: left;
-    background-color: var(--primary-light-color);
-    box-shadow: 0 8px 30px rgb(212 20 67 / 10%);
-    border-radius: 24px;
+  padding: 43px 20px;
+  text-align: left;
+  background-color: var(--primary-light-color);
+  box-shadow: 0 8px 30px rgb(212 20 67 / 10%);
+  border-radius: 24px;
+
+  @include adaptive-for-tablet {
+    margin: 10px;
+    flex-basis: calc((100% - 60px) / 3);
+    padding: 50px 31px;
+  }
+
+  @include adaptive-for-desktop {
+    margin: 15px;
+    flex-basis: calc((100% - 90px) / 3);
+    padding: 50px 43px;
+  }
 }
+
+.location-list-item:not(:last-child) {
+  @include adaptive-before-tablet {
+    margin-bottom: 20px;
+  }
+}
+
 .location-list-place {
     display: inline-block;
     margin-bottom: 25px;
@@ -89,8 +112,14 @@
 }
 
 .location-address-tel {
-    line-height: 1.5;
-    color: var(--secondary-dark-shaded-color);
+
+  line-height: 1.5;
+  color: var(--secondary-dark-shaded-color);
+
+  @include adaptive-for-tablet {
+    font-size: 14px;
+    line-height: 1.86;
+  }
 }
 
 //Buttons
@@ -135,29 +164,29 @@
 // //     }
 // }
 
-  @include adaptive-for-tablet {
-    // .contacts-container {
-    //   margin-top: -78px;
-    // }
-  .location-list{
-display: flex;
-  }
-// .location-list-item:not(:last-child){
-// margin-right: 20px;
+//   @include adaptive-for-tablet {
+//     // .contacts-container {
+//     //   margin-top: -78px;
+//     // }
+//   .location-list{
+// display: flex;
+//   }
+// // .location-list-item:not(:last-child){
+// // margin-right: 20px;
+// // }
+// .location-list-item {
+// padding: 50px 30px;
 // }
-.location-list-item {
-padding: 50px 30px;
-}
-}
+// }
 
 
-  @include adaptive-for-desktop {
-//   .location-list-item:not(:last-child){
-// margin-right: 30px;
+//   @include adaptive-for-desktop {
+// //   .location-list-item:not(:last-child){
+// // margin-right: 30px;
+// // }
+// .location-list-item {
+// padding: 50px 40px;
 // }
-.location-list-item {
-padding: 50px 40px;
-}
 
   
-  }
+//   }
